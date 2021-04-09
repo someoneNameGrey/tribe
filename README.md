@@ -2,7 +2,7 @@
 
 ### Requests
 
-#### Fetch Data
+#### Fetch Data (Deprecated)
 GET: `/api/fetch`
 
 #### Posts Index
@@ -12,10 +12,11 @@ GET: `/api/posts`
 GET: `/api/comments`
 
 Filter params available: 
-- `id`
-- `postId` or `post_id`
-- `name`
-- `email`
-- `body`
+- `q`
+- `id` (Deprecated)
+- `postId` or `post_id` (Deprecated)
+- `name` (Deprecated)
+- `email` (Deprecated)
+- `body` (Deprecated)
 
-Example: `/api/comments?email=Eliseo@gardner.biz`
+Example: `/api/comments?q=laboriosam`

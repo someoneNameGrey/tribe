@@ -9,5 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+    const postsEndpoint = 'https://jsonplaceholder.typicode.com/posts';
+    const commentsEndpoint = 'https://jsonplaceholder.typicode.com/comments';
+    
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

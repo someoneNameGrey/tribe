@@ -19,6 +19,5 @@ use App\Http\Controllers\Api\DataController;
 |
 */
 
-Route::get('/fetch', [DataController::class, 'fetch']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/comments', [CommentController::class, 'index']);
