@@ -12,6 +12,31 @@ class CommentController extends Controller
     public function index(Request $request)
     {
         $client = new Client();
+        //GET comments
+        $commentRes = $client->request('GET', static::commentsEndpoint);
+        $comments = json_decode($commentRes->getBody());
+
+        $commentArr = array();
+
+        if ($request->query('q')) {
+            $terms = $request->query('q');
+            foreach ($comments as $comment) {
+                $objVar = get_object_vars($comment);
+                foreach ($objVar as $key => $value) {
+                    if (strpos($value, $terms) !== false )  {
+                        array_push($commentArr, $comment);
+                        break;
+                    }
+                }
+            }
+            return $commentArr;
+        }
+        return $comments;
+    }
+
+    public function advFilter(Request $request)
+    {
+        $client = new Client();
         //GET posts
         $postRes = $client->request('GET', static::postsEndpoint);
         $posts = json_decode($postRes->getBody());

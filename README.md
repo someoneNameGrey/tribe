@@ -11,6 +11,9 @@ GET: `/api/posts`
 #### Filter Comments
 GET: `/api/comments`
 
+#### Advance Filter
+GET: `/api/adv-filter`
+
 Filter params available: 
 - `q`
 - `id` (Deprecated)

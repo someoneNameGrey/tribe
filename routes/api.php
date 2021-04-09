@@ -21,3 +21,4 @@ use App\Http\Controllers\Api\DataController;
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/comments', [CommentController::class, 'index']);
+Route::get('/adv-filter', [CommentController::class, 'advFilter']);
