@@ -37,9 +37,9 @@ class PostController extends Controller
         $postArr = array();
         foreach ($posts as $post) {
             $newPost = [
-                    'post_id' => $post->id,
-                    'post_title'   => $post->title,
-                    'post_body'    => $post->body,
+                    'post_id'       => $post->id,
+                    'post_title'    => $post->title,
+                    'post_body'     => $post->body,
                     'total_number_of_comments' => $commentsCount[$post->id]
                 ];
             array_push($postArr, $newPost);
