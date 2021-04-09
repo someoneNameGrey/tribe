@@ -18,7 +18,7 @@ class CommentController extends Controller
 
         $commentArr = array();
 
-        if ($request->query()) {
+        if ($request->query('q')) {
             $terms = $request->query('q');
             foreach ($comments as $comment) {
                 $objVar = get_object_vars($comment);
@@ -29,10 +29,8 @@ class CommentController extends Controller
                     }
                 }
             }
-
             return $commentArr;
         }
-
         return $comments;
     }
 }
